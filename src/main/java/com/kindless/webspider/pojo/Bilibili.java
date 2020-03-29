@@ -1,6 +1,6 @@
 package com.kindless.webspider.pojo;
 
-import lombok.Data;
+        import lombok.Data;
 
 @Data
 public class Bilibili {

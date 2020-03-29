@@ -4,8 +4,17 @@ import com.kindless.webspider.pojo.Bilibili;
 
 public interface BilibiliService {
 
-
+    /**
+     * 保存爬取的数据
+     * @param bilibili
+     */
     public void save(Bilibili bilibili);
-    public Bilibili findByBV(String bv);
-    public boolean isExist(String bv);
+
+    /**
+     *
+     * @param userName
+     * @return Bilibili
+     */
+    public Bilibili findByBV(String userName);
+    public boolean isExist(String userName);
 }
