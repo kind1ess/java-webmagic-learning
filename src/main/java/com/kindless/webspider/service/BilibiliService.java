@@ -1,4 +1,5 @@
 package com.kindless.webspider.service;
 
-public class BilibiliService {
+public interface BilibiliService {
+
 }

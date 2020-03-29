@@ -1,4 +1,6 @@
 package com.kindless.webspider.service.Imp;
 
-public class BilibiliServiceImp {
+import com.kindless.webspider.service.BilibiliService;
+
+public class BilibiliServiceImp implements BilibiliService {
 }
