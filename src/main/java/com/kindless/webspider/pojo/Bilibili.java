@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Bilibili {
-    private String bv;
-    private String name;
+    private String userName;
+    private String title;
     private String introduction;
 }

@@ -18,10 +18,10 @@ public class BilibiliServiceImp implements BilibiliService {
         }
     }
 
-    public Bilibili findByBV(String bv) {
+    public Bilibili findByBV(String userName) {
         Bilibili bilibili = null;
         try {
-            bilibili = DAOFactory.getBiliBiliDAOInstance().findByBV(bv);
+            bilibili = DAOFactory.getBiliBiliDAOInstance().findByBV(userName);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -30,7 +30,7 @@ public class BilibiliServiceImp implements BilibiliService {
         return bilibili;
     }
 
-    public boolean isExist(String bv) {
-        return findByBV(bv) == null;
+    public boolean isExist(String userName) {
+        return findByBV(userName) != null;
     }
 }

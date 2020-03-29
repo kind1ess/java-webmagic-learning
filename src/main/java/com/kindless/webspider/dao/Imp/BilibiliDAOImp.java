@@ -17,7 +17,7 @@ public class BilibiliDAOImp implements BilibiliDAO {
     }
     public Bilibili findByBV(String bv) throws SQLException {
 
-        String sql = "select * from table_bilibili where BV=?";
+        String sql = "select * from tb_bilibili where username=?";
         preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1,bv);
         ResultSet resultSet = null;
@@ -25,21 +25,24 @@ public class BilibiliDAOImp implements BilibiliDAO {
         Bilibili bilibili = null;
         while(resultSet.next()){
             bilibili = new Bilibili();
-            bilibili.setBv(resultSet.getString(1));
-            bilibili.setName(resultSet.getString(2));
+            bilibili.setUserName(resultSet.getString(1));
+            bilibili.setTitle(resultSet.getString(2));
             bilibili.setIntroduction(resultSet.getString(3));
         }
         return bilibili;
     }
 
     public boolean insert(Bilibili bilibili) throws SQLException{
-        String sql = "insert into table_bilibili(BV,name,introduction) values(?,?,?)";
+        String sql = "insert into tb_bilibili(username,title,introduction) values(?,?,?)";
         preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1,bilibili.getUserName());
+        preparedStatement.setString(2,bilibili.getTitle());
+        preparedStatement.setString(3,bilibili.getIntroduction());
         if(preparedStatement.executeUpdate()>0){
-            System.out.println("BV:"+bilibili.getBv()+"添加完成");
+            System.out.println("BV:"+bilibili.getUserName()+"添加完成");
             return true;
         }
-        System.out.println("BV:"+bilibili.getBv()+"添加失败");
+        System.out.println("BV:"+bilibili.getUserName()+"添加失败");
         return false;
     }
 }

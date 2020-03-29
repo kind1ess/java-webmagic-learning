@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DatabaseConnection {
     private static String DBDRIVER = "com.mysql.cj.jdbc.Driver";
-    private static String DBURL = "jdb:mysql://localhost:3306/webspider?useUnicode=true" +
+    private static String DBURL = "jdbc:mysql://localhost:3306/webspider?useUnicode=true" +
             "&characterEncoding=UTF-8&serverTimezone=UTC";
     private static String DBUSER = "root";
     private static String DBPASSWORD = "123456";
