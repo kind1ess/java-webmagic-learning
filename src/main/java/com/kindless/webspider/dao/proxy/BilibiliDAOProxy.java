@@ -17,10 +17,27 @@ public class BilibiliDAOProxy implements BilibiliDAO {
     }
 
     public Bilibili findByBV(String bv) throws SQLException {
-        return bilibiliDAO.findByBV(bv);
+        Bilibili bilibili = null;
+        try {
+            bilibili = bilibiliDAO.findByBV(bv);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            DatabaseConnection.close(databaseConnection.getConnection());
+        }
+
+        return bilibili;
     }
 
     public boolean insert(Bilibili bilibili) throws SQLException {
-        return bilibiliDAO.insert(bilibili);
+        boolean flag = false;
+        try {
+            flag = bilibiliDAO.insert(bilibili);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            DatabaseConnection.close(databaseConnection.getConnection());
+        }
+        return flag;
     }
 }
