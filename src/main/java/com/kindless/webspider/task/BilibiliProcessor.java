@@ -2,7 +2,6 @@ package com.kindless.webspider.task;
 
 import com.kindless.webspider.pojo.Bilibili;
 import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Site;
 
 import us.codecraft.webmagic.processor.PageProcessor;
